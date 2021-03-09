@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <form action="/process" method='POST'>
+        {% csrf_token %}
+        Your Name: <input type="text" name='name'>
+        <br>
+        Dojo Location: <select name='dojolocation'>
+        <option value="dallas">Dallas</option>
+        <option value="seattle">Seattle</option>
+        <option value="chicago">Chicago</option>
+        </select>
+        <br>
+        Favorite Language: <select name='favoritelanguage'>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+        <option value="ruby">Ruby</option>
+        </select>
+        <br>
+        <input type="submit" value='View User'>
+    </form>
+</body>
+</html>

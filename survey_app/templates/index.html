@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <h1>Dojo Survey</h1>
+    <div id="home">
+        <form action="/survey" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="your_name">Your Name:</label>
+                <input type="text" id="your_name" name="your_name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="locations">Dojo Location:</label>
+                <select id="locations" name="locations" class="form-control">
+                    {% for locations in locations %}
+                    <option value="{{ locations }}">{{ locations }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="languages">Favorite Language:</label>
+                <select id="languages" name="languages" class="form-control">
+                    {% for languages in languages %}
+                    <option value="{{ languages }}">{{ languages }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button class="button">Button</button>
+        </form>
+</body>
+</html>
